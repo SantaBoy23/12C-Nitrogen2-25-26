@@ -1,4 +1,4 @@
-# 12C-Hydrogen2-25-26
+# 12C-Nitrogen2-25-26
 Hello! This is our code for Robot 3: "Nitrogen 2" for the 25/26 Push Back Season.
 
 All of our ".cpp" files have comments that explain the function(s) of almost every line. Each subsystem/mechanism has its own ".cpp" file, where we assign the buttons that will control certain actions and any other macros/automations relating to the subsystem/mechanism. These functions are then recalled in "main.cpp."
