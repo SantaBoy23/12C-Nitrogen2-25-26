@@ -34,7 +34,7 @@ void IntakeControl() {
     if (master.get_digital(DIGITAL_L1)) {
         BottomIntakeMove(127);
         MidIntakeMove(127);
-        TopIntakeMove(-127);
+        TopIntakeMove(127);
     }
 
     // If R1 is pressed, spin intake forwards
@@ -53,7 +53,8 @@ void IntakeControl() {
 
     else if (master.get_digital(DIGITAL_RIGHT)) {
         BottomIntakeMove(127);
-        TopIntakeMove(-110);
+        TopIntakeMove(-127);
+        MidIntakeMove(127);
     }
 
     else if (master.get_digital(DIGITAL_DOWN)) {
@@ -75,6 +76,7 @@ void IntakeControl() {
     else {
         BottomIntakeMove(0);
         TopIntakeMove(0);
+        MidIntakeMove(0);
         CenterDrop(false);
         BottomContract(false);
     }
