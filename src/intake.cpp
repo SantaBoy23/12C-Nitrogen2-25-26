@@ -19,8 +19,8 @@ void MidIntakeMove(int IntakeSpeed) {
 //     intakeBottom.move(-IntakeSpeed);
 // }
 
-void CenterDrop(bool CenterState) {
-    center.set(CenterState);
+void HoodLift(bool HoodState) {
+    hood.set(HoodState);
 }
 
 void BottomContract(bool BottomState) {
@@ -42,6 +42,7 @@ void IntakeControl() {
         BottomIntakeMove(127);
         MidIntakeMove(127);
         TopIntakeMove(127);
+        HoodLift(true);
     } 
 
     // If R2 is pressed, spin intake backwards
@@ -59,8 +60,7 @@ void IntakeControl() {
 
     else if (master.get_digital(DIGITAL_DOWN)) {
         BottomIntakeMove(127);
-        TopIntakeMove(-80); //-80 matchs //-30 skills
-        CenterDrop(true);
+        TopIntakeMove(-80);
     }
 
     else if (master.get_digital(DIGITAL_LEFT)) {
@@ -77,7 +77,7 @@ void IntakeControl() {
         BottomIntakeMove(0);
         TopIntakeMove(0);
         MidIntakeMove(0);
-        CenterDrop(false);
+        HoodLift(false);
         BottomContract(false);
     }
 }

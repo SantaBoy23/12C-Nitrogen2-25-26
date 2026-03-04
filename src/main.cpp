@@ -1,8 +1,8 @@
 #include "main.h"
 
 ez::Drive chassis(
-    {-18, -19, -20},    // Left Chassis Ports
-    {11, 12, 13}, // Right Chassis Ports
+    {-17, -16, -15},    // Left Chassis Ports
+    {18, 19, 20}, // Right Chassis Ports
     2, 3.25, 450  // IMU Port, Wheel Diameter (in), Wheel RPM
 );
 
@@ -20,7 +20,7 @@ void initialize() {
   pros::delay(1500);  // Allow legacy ports to initialize
 
   // Configure intake motors
-  intakeTop.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
+  intakeTop.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
   intakeBottom.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
   intakeTop.set_current_limit(2500);
   intakeBottom.set_current_limit(2500);
